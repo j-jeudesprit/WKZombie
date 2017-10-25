@@ -9,7 +9,7 @@
 
 [<img align="left" src="https://raw.githubusercontent.com/mkoehnke/WKZombie/master/Resources/Documentation/Logo.png" hspace="30" width="140px">](#logo)
 
-WKZombie is an **iOS/OSX web-browser without a graphical user interface**. It was developed as an experiment in order to familiarize myself with **using functional concepts** written in **Swift 4**.
+WKZombie is an **iOS/macOS web-browser without a graphical user interface**. It was developed as an experiment in order to familiarize myself with **using functional concepts** written in **Swift 4**.
 
 It incorporates [WebKit](https://webkit.org) (WKWebView) for rendering and [hpple](https://github.com/topfunky/hpple) (libxml2) for parsing the HTML content. In addition, it can take snapshots and has rudimentary support for parsing/decoding [JSON elements](#json-elements). **Chaining asynchronous actions makes the code compact and easy to use.**
 
@@ -34,15 +34,15 @@ When using a common web-browser (e.g. Mobile Safari) on iOS, you would typically
 
 #### Automation with WKZombie
 
-The same navigation process can be reproduced **automatically** within an iOS/OSX app linking WKZombie *Actions*. In addition, it is now possible to manipulate or display this data in a native way with *UITextfield*, *UIButton* and a *UITableView*.
+The same navigation process can be reproduced **automatically** within an iOS/macOS app linking WKZombie *Actions*. In addition, it is now possible to manipulate or display this data in a native way with *UITextfield*, *UIButton* and a *UITableView*.
 
 <img src="https://raw.githubusercontent.com/mkoehnke/WKZombie/master/Resources/Documentation/WKZombie-Simulator-Demo.gif" />
 
-**Take a look at the iOS/OSX demos in the `Example` directory to see how to use it.**
+**Take a look at the iOS/macOS demos in the `Example` directory to see how to use it.**
 
 # Getting Started
 
-## iOS / OSX
+## iOS / macOS
 
 The best way to get started is to look at the sample project. Just run the following commands in your shell and you're good to go:
 
@@ -283,7 +283,7 @@ Fetched data can be converted into types, that implement the _HTMLFetchableConte
 - UIImage / NSImage
 - Data
 
-__Note:__ See the OSX example for more info on how to use this.
+__Note:__ See the macOS example for more info on how to use this.
 
 ### Transform
 
@@ -365,11 +365,11 @@ SearchType                     | Description
 
 The following Operators can be applied to *Actions*, which makes chained *Actions* easier to read:
 
-Operator    | iOS | OSX | Description
-:----------:|:---:|:---:| ---------------
-`>>>`       | x   | x   | This Operator equates to the *andThen()* method. Here, the left-hand side *Action* will be started and the result is used as parameter for the right-hand side *Action*. **Note:** If the right-hand side *Action* doesn't take a parameter, the result of the left-hand side *Action* will be ignored and not passed.
-`>>*`       | x   |     | This is a convenience operator for the _snap_ command. It is equal to the `>>>` operator with the difference that a snapshot will be taken after the left Action has been finished. **Note: This operator throws an assert if used with any other than the shared instance.**
-`===`       | x   | x   | This Operator starts the left-hand side *Action* and passes the result as **Optional** to the function on the right-hand side.
+Operator    | iOS | macOS | Description
+:----------:|:---:|:-----:| ---------------
+`>>>`       | x   | x     | This Operator equates to the *andThen()* method. Here, the left-hand side *Action* will be started and the result is used as parameter for the right-hand side *Action*. **Note:** If the right-hand side *Action* doesn't take a parameter, the result of the left-hand side *Action* will be ignored and not passed.
+`>>*`       | x   |       | This is a convenience operator for the _snap_ command. It is equal to the `>>>` operator with the difference that a snapshot will be taken after the left Action has been finished. **Note: This operator throws an assert if used with any other than the shared instance.**
+`===`       | x   | x     | This Operator starts the left-hand side *Action* and passes the result as **Optional** to the function on the right-hand side.
 
 ## Authentication
 
